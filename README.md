@@ -37,7 +37,9 @@ Installation:
 Mein Installationsverzeichnis ist /root/mailcow/
 Pullen vom Docker-Hub sowie Erstellen und Starten des Docker-Containers mit ./start.sh
 Wenn das geklappt hat seht ihr die Konsole des neuen Mail-Servers.
-Dort in das Basisverzeichnis wechseln ("cd /root/mailcow-0.13.1") und die Installation mit "./install_mailcow.sh" starten. Nach der Abarbeitung der o.g. Fixe startet das originale Mailcow-Installationsscript. Nach Abschluß der Installation noch "./dienste_starten.sh" ausführen und die Installation sollte erfolgreich abgeschlossen sein.
+Dort in das Basisverzeichnis wechseln ("cd /root/mailcow-0.13.1") und die Installation mit "./install_mailcow.sh" starten. 
+Nach der Abarbeitung der o.g. Fixe startet das originale Mailcow-Installationsscript. 
+Nach Abschluß der Installation noch "./dienste_starten.sh" ausführen und die Installation sollte erfolgreich abgeschlossen sein.
 
 Über Rückmeldungen und Verbesserungsvorschläge würde ich mich sehr freuen.
 
