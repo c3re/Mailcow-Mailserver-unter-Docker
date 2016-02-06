@@ -22,8 +22,11 @@ Mailcow kann sowohl mit Apache2 als auch mit Nginx als Web-Server betrieben werd
 Mailcow installiert und nutzt standardmässig einen eigenen MySQL-Server. Während auf diesen zu Beginn des Installationsscripts noch zugegriffen werden kann, verliert das Script während der Installation den Zugriff und bricht ab bzw. endet erfolgos. Zur Lösung muss der MySQL-Server während der Installation an der richtigen Stelle einmal neu gestartet werden. Dazu ist in der Datei includes/functions.sh eine neue Zeile 244 einzufügen:
 
 243 if [[ $mysql_useable -ne 1 ]]; then
+
 244				service mysql restar
+
 245 			mysql --defaults-file=/etc/mysql/debian.cnf -e "UPDATE mysql.user SET Password=PASSWORD('$my_rootpw') WHERE USER='root'; FLUSH PRIVILEGES;"
+
 246 fi
 
 3.) Fuglu-Proxy
@@ -35,10 +38,15 @@ Ich habe die oben genannten Fehler behoben und ein bischen Installations-Foo dru
 Installation:
 
 Mein Installationsverzeichnis ist /root/mailcow/
+
 Pullen vom Docker-Hub sowie Erstellen und Starten des Docker-Containers mit ./start.sh
+
 Wenn das geklappt hat seht ihr die Konsole des neuen Mail-Servers.
+
 Dort in das Basisverzeichnis wechseln ("cd /root/mailcow-0.13.1") und die Installation mit "./install_mailcow.sh" starten. 
+
 Nach der Abarbeitung der o.g. Fixe startet das originale Mailcow-Installationsscript. 
+
 Nach Abschluß der Installation noch "./dienste_starten.sh" ausführen und die Installation sollte erfolgreich abgeschlossen sein.
 
 Über Rückmeldungen und Verbesserungsvorschläge würde ich mich sehr freuen.
